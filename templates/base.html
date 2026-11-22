@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{page_description}}">
+  <title>{{page_title}}</title>
+  <link rel="alternate" type="application/rss+xml" title="Kunal's Blog RSS" href="{{root_prefix}}feed.xml">
+  <link rel="stylesheet" href="{{root_prefix}}assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{{root_prefix}}index.html">
+        <span class="brand-dot"></span>
+        <span>notdatkunal</span>
+      </a>
+      <nav class="nav">
+        <a class="{{nav_home_active}}" href="{{root_prefix}}index.html">Blog</a>
+        <a class="{{nav_about_active}}" href="{{root_prefix}}about.html">About</a>
+        <a href="{{root_prefix}}feed.xml">RSS</a>
+        <button id="theme-toggle" class="theme-btn" type="button">Light mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{content}}
+  </main>
+
+  <footer class="footer">
+    <span>Written by Kunal (<a href="https://github.com/notdatkunal">@notdatkunal</a>)</span>
+    <span>Written in Markdown · Built automatically on GitHub Pages</span>
+  </footer>
+  <script src="{{root_prefix}}assets/main.js"></script>
+</body>
+</html>

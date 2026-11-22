@@ -22,6 +22,24 @@
     });
   }
 
+  const filterBtns = document.querySelectorAll("[data-filter]");
+  const cards = document.querySelectorAll(".post-card");
+  if (filterBtns.length && cards.length) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-filter");
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        cards.forEach((card) => {
+          const tags = (card.getAttribute("data-tags") || "").split(",");
+          const match = target === "all" || tags.includes(target);
+          card.classList.toggle("hidden", !match);
+        });
+      });
+    });
+  }
+
   document.querySelectorAll("pre").forEach((pre) => {
     const wrap = document.createElement("div");
     wrap.className = "code-wrap";
