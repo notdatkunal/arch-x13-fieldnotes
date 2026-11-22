@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Arch + Hyprland · arch-x13-fieldnotes</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>arch-x13-fieldnotes</a>
+      <nav class="nav">
+        <a href="index.html">Overview</a>
+        <a class="active" href="why-arch-hyprland.html">Why Arch + Hyprland</a>
+        <a href="hardware-dev.html">Hardware &amp; Dev</a>
+        <a href="content-creation.html">Streaming &amp; Editing</a>
+        <button id="theme-toggle" class="theme-btn" type="button">Light mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Why Arch Linux + Hyprland (<em>illogical-impulse</em>)</h1>
+      <p>
+        Arch's rolling-release model matches Hyprland's fast development cadence, while Hyprland hits a sweet spot between keyboard-first tiling efficiency and modern Wayland polish.
+      </p>
+    </section>
+
+    <h2>1. Why Arch + Hyprland Together?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Rolling, Bleeding-Edge Updates</h3>
+        <p>Hyprland evolves rapidly with Wayland protocol updates and GPU/driver fixes. Arch ships the latest kernel, <code>mesa</code>, <code>intel-media-driver</code>, and Hyprland immediately without waiting on fixed distro cycles.</p>
+      </div>
+      <div class="card">
+        <h3>AUR Companion Ecosystem</h3>
+        <p>Hyprland setups rely on many modular tools (widget shells, wallpaper daemons, launchers, screen capture helpers). Nearly everything is packaged in official Arch repos or the AUR.</p>
+      </div>
+      <div class="card">
+        <h3>Minimal Base</h3>
+        <p>Arch doesn't force a full desktop environment (GNOME/KDE) underneath, avoiding background service bloat and session conflicts.</p>
+      </div>
+    </div>
+
+    <h2>2. Why This Specific Setup (<code>end-4/dots-hyprland</code> + <code>uwsm</code>)?</h2>
+    <ul>
+      <li><strong>Quickshell-Powered Desktop UX:</strong> Instead of piecing together a bare bar manually, <em>illogical-impulse</em> uses Quickshell (<code>illogical-impulse-quickshell-git</code>) to deliver integrated widgets, media/system controls, notifications, and polished animations out of the box.</li>
+      <li><strong><code>uwsm</code> Systemd Integration:</strong> Launching Hyprland <code>0.57.2</code> under <code>uwsm</code> (<code>0.27.2</code>) cleanly manages environment variables, XDG portals, and user systemd units—preventing common Wayland headaches with screensharing and app launches.</li>
+      <li><strong>Low Idle Footprint:</strong> Baseline memory usage stays around <strong>~3.3 GiB</strong> out of <code>15 GiB</code>, leaving plenty of headroom for editors, containers, and browsers.</li>
+    </ul>
+
+    <h2>3. How Hyprland Compares to Other Setups</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Setup</th>
+            <th>Key Difference vs. Hyprland</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>X11 Tiling WMs</strong> (<code>i3</code>, <code>bspwm</code>, <code>dwm</code>)</td>
+            <td>Hyprland runs natively on Wayland (no screen tearing, proper per-monitor fractional scaling and mixed refresh rates) and builds blur, animations, and rounded corners right into the compositor without needing <code>picom</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>Sway</strong> (Wayland)</td>
+            <td>Sway aims to be a minimal, static i3 drop-in on Wayland. Hyprland prioritizes dynamic tiling, smooth animations, plugins, and visual customization.</td>
+          </tr>
+          <tr>
+            <td><strong>Full DEs</strong> (GNOME, KDE Plasma)</td>
+            <td>Hyprland uses less RAM/CPU and centers on keyboard-driven window management configured via readable plain-text files (<code>hyprland.conf</code>).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>4. Trade-offs &amp; Maintenance Tips</h2>
+    <div class="callout">
+      <strong>Keep dotfiles synced before big upgrades:</strong> Because both Arch and Hyprland move fast, major updates occasionally change config syntax. Pull/check upstream changes in <code>end-4/dots-hyprland</code> when running large <code>pacman</code>/<code>yay</code> upgrades so Quickshell widgets and keybinds stay aligned.
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>arch-x13-fieldnotes · Why Arch + Hyprland</span>
+    <a href="https://github.com/notdatkunal/arch-x13-fieldnotes">View source on GitHub</a>
+  </footer>
+  <script src="assets/main.js"></script>
+</body>
+</html>

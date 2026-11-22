@@ -2,6 +2,8 @@
 
 Documentation and capability guide for running **Arch Linux** with **Hyprland** (`end-4/dots-hyprland` / *illogical-impulse* + `uwsm`) on a **Lenovo ThinkPad X13 Gen 1** (Intel Core i5-10310U, Intel UHD Graphics, 16 GB RAM).
 
+- **Live Site (GitHub Pages):** https://notdatkunal.github.io/arch-x13-fieldnotes/
+
 ## Contents
 
 - [Why Arch + Hyprland (*illogical-impulse*)](docs/why-arch-hyprland.md) — Why this combination works well, how Hyprland compares to X11/Sway/GNOME/KDE, and maintenance trade-offs.
